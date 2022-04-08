@@ -5,20 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
   <link rel="stylesheet" href="./assets/CSS/style.css">
-  <title>Destination Vacation</title>
+  <title>Travel Easy</title>
 </head>
 
 <body>
 
-<section class="hero is-success is-fullheight">
+<section class="hero is-info is-fullheight-with-navbar">
   <!-- Hero head: will stick at the top -->
   <div class="hero-head">
     <header class="navbar">
       <div class="container">
         <div class="navbar-brand">
           <a class="navbar-item">
-            <img src="https://bulma.io/images/bulma-type-white.png" alt="Logo">
+            <img src="./assets/images/logo.png" alt="Logo" class="logo">
           </a>
+          <h1 class="navbar-item">Travel Easy</h1>
           <span class="navbar-burger" data-target="navbarMenuHeroC">
             <span></span>
             <span></span>
@@ -26,22 +27,23 @@
           </span>
         </div>
         <div id="navbarMenuHeroC" class="navbar-menu">
-          <div class="navbar-end">
-            <ul>
-            <a href="home">
+          <ul class="navbar-end">
+            <li class="navbar-item">
+              <a href="./index.html">
                 Home
-            </a>
-            <a href="top-destinations">
+              </a>
+            </li>
+            <li class="navbar-item">
+              <a href="#top-destinations">
                 Top Destinations
-            </a>
-            <a href="best-hotel-deals">
-                Best Hotel Deals
-            </a>
-            <span class="navbar-item">
-                <a href='subscribe'><button>Subscribe for Deals</button></a>
-            </span>
-            </ul>
-          </div>
+              </a>
+            </li>
+            <li class="navbar-item">
+              <a href="#deals">
+                Deals
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
     </header>
@@ -49,9 +51,6 @@
 
   <!-- Hero content: will be in the middle -->
   <div class="hero-body" style="background-image: url('https://images.pexels.com/photos/1174732/pexels-photo-1174732.jpeg');background-repeat: no-repeat;background-attachment: fixed;background-size: cover;">
-    <!-- <img src="https://images.pexels.com/photos/1174732/pexels-photo-1174732.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Vacation Background">
-    -->
-
     <div class="container has-text-centered">
       <p class="title">
         Where would you go right now?
@@ -66,7 +65,7 @@
             autofocus="true"
             class="form-input"
           />
-          <button type="submit" class="btn">Get Away</button>
+          <button type="submit" class="btn button is-success is-light is-responsive is-rounded" id="btn">Get Away</button>
         </form>
       </div>
     </div>
