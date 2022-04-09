@@ -9,7 +9,7 @@
 </head>
 
 <body>
-
+<!--Navabr section-->
 <section class="hero is-info is-fullheight">
   <!--Responsive Navbar with logo -->
   <div class="hero-head">
@@ -35,8 +35,8 @@
             <a href="#destinations" class="navbar-item" id="nav-item">
               Destinations
             </a>
-            <a href="#deals" class="navbar-item" id="nav-item">
-              Deals
+            <a href="#destinations" class="navbar-item" id="nav-item">
+              Weather Forecast
             </a>
           </ul>
         </div>
@@ -45,19 +45,21 @@
   </div>
 
   <!-- Hero content: will be in the middle --> 
+  <!--This is where user enters city name and is taken to weather and hotel search results-->
   <div class="hero-body hero-style">
     <div class="container">
       <p class="title has-text-white-bis has-text-centered">
           Where would you rather be?
       </p>
       <form class="control has-text-centered">
-        <input class="input is-rounded has-text-centered is-info form-input" id="destinations" type="text" placeholder="Type Your Destination Here">
+        <input class="input is-rounded has-text-centered is-info form-input" id="destinations" type="text" placeholder="Type Your Destination City Here">
         <button type="submit" class="btn button is-info is-responsive" id="btn">Get Away</button>
       </form>
     </div>
   </div>
 </section>
 
+<!--Weather forecast result which will show content based on info pulled from api-->
 <section id="weather" class="weather">
   <div class="card weather-card is-centered has-background-info-light">
     <header class="card-header">
@@ -66,6 +68,7 @@
       </p>
     </header>
     <div class="card-content">
+      <!--Weather forecast result for a city will be displayed below-->
       <div class="content">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris. Lorem ipsum dolor sit amet consectetur adipisicing elit. Id error non vero. Sed inventore consequuntur tempore vel labore, eaque eveniet ab obcaecati. 
         Magnam tempora obcaecati suscipit dolores. Dicta, facere sequi?
@@ -74,7 +77,8 @@
   </div>
     
 </section>
-    
+
+<!--Hotel search result which will show content based on info pulled from api-->
 <section id="hotel-section" class="hotel">
   <div class="card hotel-card is-centered has-background-info-light">
     <header class="card-header">
@@ -83,14 +87,13 @@
       </p>
     </header>
     <div class="card-content">
+      <!--Hotel bookings will be displayed below-->
       <div class="content">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris. Lorem ipsum dolor sit amet consectetur adipisicing elit. Id error non vero. Sed inventore consequuntur tempore vel labore, eaque eveniet ab obcaecati. 
         Magnam tempora obcaecati suscipit dolores. Dicta, facere sequi?
       </div>
     </div>
   </div>
-
-  
 
 
   <script src="./assets/JS/script.js"></script>

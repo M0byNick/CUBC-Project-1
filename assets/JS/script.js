@@ -1,4 +1,4 @@
-//Bulma documentation provided JS for navbar toggle
+//Bulma documentation provided JS code for navbar toggle to make navbar responsive for mobile screens
 document.addEventListener('DOMContentLoaded', () => {
 
     // Get all "navbar-burger" elements
@@ -24,3 +24,5 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   
   });
+
+ 
