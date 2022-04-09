@@ -3,6 +3,15 @@ h1 {
     color:white
 }
 
-/* .logo {
-    width: 100%;
-} */
+.logo {
+    width: 8%;
+    padding: 0px;
+    margin:10px 5px 5px 5px;
+}
+
+.hero-style {
+    background-image: url("../images/vacation1.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
