@@ -15,3 +15,8 @@ h1 {
     background-attachment: fixed;
     background-size: cover;
 }
+
+.form-input {
+    width:50%;
+}
+
