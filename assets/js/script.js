@@ -97,6 +97,7 @@ function getLocationWeather(lat, lon) {
                 currentTempEl.text(data.current.temp + "F");
 
                 var forecastarray = data.daily
+                todaycontainer.html("");
 
                 for (var i = 0; i < forecastarray.length - 1; i++) {
                     // converting Unix to date
