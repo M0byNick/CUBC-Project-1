@@ -98,7 +98,7 @@ function getLocationWeather(lat, lon) {
 
                 var forecastarray = data.daily
 
-                for (var i = 0; i < forecastarray.length; i++) {
+                for (var i = 0; i < forecastarray.length - 1; i++) {
                     // converting Unix to date
                     var humanDateFormat = new Date(data.daily[i].dt * 1000).toLocaleDateString("en-US");
 
@@ -137,7 +137,7 @@ $("#citiesList").on("submit", ".list-group-item", getSavedCityWeather)
 
 //Bulma documentation provided JS code for navbar toggle to make navbar responsive for mobile screens
 document.addEventListener('DOMContentLoaded', () => {
-    
+
     // Get all "navbar-burger" elements
     const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
   
