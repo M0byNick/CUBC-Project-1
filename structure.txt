@@ -1,0 +1,7 @@
+1) Create function that calls the api
+
+2) Once you find data you need, use a .then statment to populate the website with html elements.
+
+3) Figure out where you are going to call the API
+
+4) Use the function that you made all call it in the script which should connect to Dimos api call
