@@ -11,7 +11,7 @@ var currentDate = moment().format("M/D/YYYY");
 var cityName = "";
 var todaycontainer = $("#todaycontainer");
 var dailyDivs = [$('#day-1-div'), $('#day-2-div'), $('#day-3-div'), $('#day-4-div'), $('#day-5-div')];
-​
+
 var savedCities = JSON.parse(localStorage.getItem('savedCities')) || [];
 ​
 // Forloop for persisting the data onto HMTL page
