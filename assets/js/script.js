@@ -13,18 +13,18 @@ var todaycontainer = $("#todaycontainer");
 var dailyDivs = [$('#day-1-div'), $('#day-2-div'), $('#day-3-div'), $('#day-4-div'), $('#day-5-div')];
 
 var savedCities = JSON.parse(localStorage.getItem('savedCities')) || [];
-​
+
 // Forloop for persisting the data onto HMTL page
 for (var i = 0; i < savedCities.length; i++) {
-​
+
     var city = savedCities[i];
     var cityNameEl = $("<li>");
     cityNameEl.addClass("list-group-item btn btn-primary col-12 btn-style btn-recent");
     cityNameEl.text(city);
-​
+
     $(".list-group").append(cityNameEl);
 }
-​
+
 // Key count for local storage 
 var keyCount = 0;
 // Search button click event
@@ -32,19 +32,19 @@ document.getElementById("formid").addEventListener('submit', function(event){
     event.preventDefault();
     searchInput = $(".input").val();
     
-​
+
     // Storing New Cities into local storage with the old Cities
     var previouslySavedCities = JSON.parse(localStorage.getItem("savedCities")) || []
     previouslySavedCities.push(searchInput)
     localStorage.setItem("savedCities", JSON.stringify(previouslySavedCities))
-​
+
     getUserLocation(searchInput);
 });
-​
+
 function getSavedCityWeather() {
     getUserLocation($(this).text())
 }
-​
+
 // get coordinates for user location
 function getUserLocation(city) {
     // Get location lon and lat
@@ -62,7 +62,7 @@ function getUserLocation(city) {
                 // Convert from Int to Str
                 var latString = locationLat.toString();
                 var lonString = locationLon.toString();
-​
+
                 // Call function to get values
                 getLocationWeather(latString, lonString);
             });
@@ -73,14 +73,15 @@ function getUserLocation(city) {
         
         alert("Unable to get weather");
     });
-​
-​
-​
+
+
+
 };
-​
+
 function getLocationWeather(lat, lon) {
     var apiUrl = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&exclude=minutely,hourly,alerts&units=imperial&appid=" + apiKey;
-​
+
+
     fetch(apiUrl).then(function(response) {
         if (response.ok) {
             response.json().then(function(data) {
@@ -94,13 +95,13 @@ function getLocationWeather(lat, lon) {
                 // Current Temp
                 var currentTempEl = $("#todaytemp");
                 currentTempEl.text(data.current.temp + "F");
-​
+
                 var forecastarray = data.daily
-​
+
                 for (var i = 0; i < forecastarray.length; i++) {
                     // converting Unix to date
                     var humanDateFormat = new Date(data.daily[i].dt * 1000).toLocaleDateString("en-US");
-​
+
                     // Variables to dynamically create the classes into HTML
                     var card = $("<div>").addClass("card columns");
                     var cardbody = $("<div>").addClass("card-content");
@@ -109,7 +110,7 @@ function getLocationWeather(lat, lon) {
                     var temptext = $("<div>").addClass("subtitle");
                     var windtext = $("<p>").addClass("subtitle");
                     var humidity = $("<p>").addClass("subtitle");
-​
+
                     // Appending the cards and elements into the weather card
                     todaycontainer.append(card);
                     card.append(cardbody);
@@ -118,7 +119,7 @@ function getLocationWeather(lat, lon) {
                     cardbody.append(temptext);
                     cardbody.append(windtext);
                     cardbody.append(humidity);
-​
+
                     // Calling the data from API
                     cardheader.text(humanDateFormat);
                     humidity.text("Humidity: " + forecastarray[i].humidity + " %");
@@ -131,12 +132,12 @@ function getLocationWeather(lat, lon) {
         }
     })
 }
-​
+
 $("#citiesList").on("submit", ".list-group-item", getSavedCityWeather)
-​
+
 //Bulma documentation provided JS code for navbar toggle to make navbar responsive for mobile screens
 document.addEventListener('DOMContentLoaded', () => {
-​
+    
     // Get all "navbar-burger" elements
     const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
   
