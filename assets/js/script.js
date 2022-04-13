@@ -11,6 +11,7 @@ var currentDate = moment().format("M/D/YYYY");
 var cityName = "";
 var todaycontainer = $("#todaycontainer");
 var dailyDivs = [$('#day-1-div'), $('#day-2-div'), $('#day-3-div'), $('#day-4-div'), $('#day-5-div')];
+var hotelbody = $("#hotelbody");
 
 var savedCities = JSON.parse(localStorage.getItem('savedCities')) || [];
 
@@ -31,6 +32,7 @@ var keyCount = 0;
 document.getElementById("formid").addEventListener('submit', function(event){
     event.preventDefault();
     searchInput = $(".input").val();
+    hotelbody.html("");
     
 
     // Storing New Cities into local storage with the old Cities
@@ -40,7 +42,7 @@ document.getElementById("formid").addEventListener('submit', function(event){
 
     getHotels(searchInput);
     //function for linking hotel images
-    // getHotelImages(searchInput);
+    getHotelImages(searchInput);
     getUserLocation(searchInput);
 });
 
@@ -183,10 +185,11 @@ var getHotels = function(searchInput) {
 	.then(response => response.json())
 	.then(response => 
 
-
+        
 
     // get hotel names from API
-    { for (let i = 0; i < response.suggestions[1].entities.length; i++) {
+    {
+        for (let i = 0; i < response.suggestions[1].entities.length; i++) {
         //console.log(response.suggestions[1].entities[i].name);
         
         var hotelName = document.createElement('div')
@@ -206,31 +209,31 @@ var getHotels = function(searchInput) {
 //priyam and vickiana trying to link images for hotel 
 
 //get hotel images based on searchInput
-// var getHotelImages = function (searchInput) {
-//     const options = {
-//         method: 'GET',
-//         headers: {
-//             'X-RapidAPI-Host': 'hotels-com-provider.p.rapidapi.com',
-//             'X-RapidAPI-Key': '3fc69c7541msh2095ea3bf50e2f3p1ece8ajsnf47a3cdc9c68'
-//         }
-//     };
+var getHotelImages = function (searchInput) {
+    const options = {
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Host': 'hotels-com-provider.p.rapidapi.com',
+            'X-RapidAPI-Key': '3fc69c7541msh2095ea3bf50e2f3p1ece8ajsnf47a3cdc9c68'
+        }
+    };
 
 
 
-//     fetch('https://hotels-com-provider.p.rapidapi.com/v1/hotels/photos?hotel_id=363464', options)
-//         .then(response => response.json())
-//         .then(response => console.log(response))
-//         .catch(err => console.error(err));
+    fetch('https://hotels-com-provider.p.rapidapi.com/v1/hotels/photos?hotel_id=363464', options)
+        .then(response => response.json())
+        .then(response => {
+            const imgUrl = response[0].mainUrl 
+            var img = document.createElement("img")
+            img.setAttribute("src", imgUrl)
+            console.log(img); 
 
-//         const imgUrl = "https://exp.cdn-hotels.com/hotels/4000000/3860000/3851700/3851675/" + id[i] + ".jpg"
-//         var img = document.createElement("img")
-//         img.setAttribute("src", imgUrl)
-//         console.log(img); 
+            //Appending the cards and elements into the hotel card
+            hotelbody.append(img);
+            console.log(response)
+        })
+        .catch(err => console.error(err));
+    }
 
-//         // Appending the cards and elements into the hotel card
-//         hotelName.append(img);
-// }
-
-
-    //get hotel images from API
+        
     
