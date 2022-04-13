@@ -54,6 +54,17 @@ h1 {
     height: 80%;
 }
 
+.hotel-content {
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.title {
+    margin:1% ;
+    
+}
+
 .top {
     position: absolute;
     right: 0px;
