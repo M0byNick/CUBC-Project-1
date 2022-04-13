@@ -4,11 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-  <link rel="stylesheet" href="./assets/CSS/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="./style.css">
   <title>Travel Easy</title>
 </head>
 
 <body>
+<a name="top"></a>
 <!--Navabr section-->
 <section class="hero is-info is-fullheight">
   <!--Responsive Navbar with logo -->
@@ -17,7 +19,7 @@
       <div class="container">
         <div class="navbar-brand">
           <a class="logo">
-            <img src="./assets/images/logo.png" alt="Logo">
+            <img src="./images/logo.png" alt="Logo">
           </a>
           <h1 class="navbar-item">Travel Easy</h1>
           <!--Responsive navbar that toggles for mobile devices-->
@@ -32,10 +34,10 @@
             <a href="./index.html" class="navbar-item" id="nav-item">
               Home
             </a>
-            <a href="#destinations" class="navbar-item" id="nav-item">
+            <a href="#hotel-section" class="navbar-item" id="nav-item">
               Destinations
             </a>
-            <a href="#destinations" class="navbar-item" id="nav-item">
+            <a href="#weather" class="navbar-item" id="nav-item">
               Weather Forecast
             </a>
           </ul>
@@ -51,8 +53,8 @@
       <p class="title has-text-white-bis has-text-centered">
           Where would you rather be?
       </p>
-      <form class="control has-text-centered">
-        <input class="input is-rounded has-text-centered is-info form-input" id="destinations" type="text" placeholder="Type Your Destination City Here">
+      <form id="formid" class="control has-text-centered">
+        <input class="input searchcity is-rounded has-text-centered is-info form-input" id="destinations" type="text" placeholder="Type Your Destination City Here">
         <button type="submit" class="btn button is-info is-responsive" id="btn">Get Away</button>
       </form>
     </div>
@@ -63,15 +65,14 @@
 <section id="weather" class="weather">
   <div class="card weather-card is-centered has-background-info-light">
     <header class="card-header">
-      <p class="card-header-title is-centered is-size-3 has-text-grey-dark">
+      <p class="subtitle card-header-title is-centered is-size-3 has-text-grey-dark">
         Weather Forecast
       </p>
     </header>
-    <div class="card-content">
-      <!--Weather forecast result for a city will be displayed below-->
-      <div class="content">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris. Lorem ipsum dolor sit amet consectetur adipisicing elit. Id error non vero. Sed inventore consequuntur tempore vel labore, eaque eveniet ab obcaecati. 
-        Magnam tempora obcaecati suscipit dolores. Dicta, facere sequi?
+    <div id="weathercard" class="card-content">
+      Weather forecast result for a city will be displayed below
+      <div id="todaycontainer" class="columns">
+        
       </div>
     </div>
   </div>
@@ -95,8 +96,10 @@
     </div>
   </div>
 
-
-  <script src="./assets/JS/script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="./weather.js"></script>
+  
   </body>  
-
+  <a class="top" href="#top">Back To Top</a>
 </html>
